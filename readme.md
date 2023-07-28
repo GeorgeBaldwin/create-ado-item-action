@@ -1,25 +1,25 @@
-# Hello world javascript action
+# ADO javascript action
 
-This action prints "Hello World" or "Hello" + the name of a person to greet to the log.
+This action creates ado workitems
 
 ## Inputs
 
-### `who-to-greet`
+### `XXXX`
 
-**Required** The name of the person to greet. Default `"World"`.
+**Required**XXX
 
 ## Outputs
 
-### `time`
+### `WorkItemId`
 
-The time we greeted you.
+ID of the workitem created
 
 ## Example usage
 
 ```yaml
-uses: actions/hello-world-javascript-action@e76147da8e5c81eaf017dede5645551d4b94427b
+uses: actions/create-ado-item-action@0.0.1
 with:
-  who-to-greet: 'Mona the Octocat'
+  ...: '...'
 ```
 
 
