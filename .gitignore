@@ -1,0 +1,76 @@
+# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
+.editorconfig
+
+# dependencies
+node_modules
+
+# production
+build
+
+# misc
+.DS_Store
+*.pem
+
+# debug
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# local env files
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+cypress.env.json
+
+# vercel
+.vercel
+
+# typescript
+*.tsbuildinfo
+public/fonts/New folder/style.css
+public/fonts/New folder/selection.json
+public/fonts/New folder/Read Me.txt
+public/fonts/New folder/fonts/fgmro-primary-icons.woff
+public/fonts/New folder/fonts/fgmro-primary-icons.ttf
+public/fonts/New folder/fonts/fgmro-primary-icons.svg
+public/fonts/New folder/fonts/fgmro-primary-icons.eot
+public/fonts/New folder/demo.html
+public/fonts/New folder/demo-files/demo.js
+public/fonts/New folder/demo-files/demo.css
+
+.VSCodeCounter
+babel.config.js
+public/service-worker*
+public/workbox-*
+public/fallback-*
+src/test/e2e/videos/**/**
+src/test/e2e/screenshots/**/**
+keys
+junit.xml
+test-output-*.xml
+
+
+/shelf/
+/workspace.xml
+# Editor-based HTTP Client requests
+/httpRequests/
+
+#certificates
+ca-certificates.pem
+
+# Cache
+.eslintcache
+
+# Docker
+compose.yaml
+
+# Cypress
+cypress
+
+#nx
+.nx-helpers
+
+# Next.js
+.next

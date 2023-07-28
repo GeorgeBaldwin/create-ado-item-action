@@ -1,0 +1,39 @@
+name: 'Hello World'
+description: 'Greet someone and record the time'
+inputs:
+  table-changes:  # id of input
+    description: 'Table Changes'
+    required: true
+  data-changes:
+    description: 'Data Changes'
+    required: false
+  type:
+    description: 'Type of workitem'
+    required: true
+  title:
+    description: 'Title of workitem'
+    required: true
+  pat:
+    description: 'token to auth with ado'
+    required: true
+  area-path:
+    description: 'area to associate workitem'
+    required: true
+  iteration-path:
+    description: 'Iteration to assocaite workitem'
+    required: true
+  url-path-build:
+    description: 'URL link to build'
+    required: true
+  project:
+    description: 'Project name within org'
+    required: true
+  org-name:
+    description: 'Org Name in Devops'
+    required: true
+outputs:
+  workItemId: # id of output
+    description: 'ID of artifact'
+runs:
+  using: 'node16'
+  main: 'dist/index.js'
