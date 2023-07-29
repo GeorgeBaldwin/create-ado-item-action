@@ -71486,6 +71486,7 @@ try {
     console.log(tableChanges);
     console.log("data changes");
     console.log(dataChanges);
+    console.log("Done");
     const token = core.getInput('pat-token');
     const orgName = core.getInput('org-name');
     const project = core.getInput('project');
