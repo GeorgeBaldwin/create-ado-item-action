@@ -8,15 +8,11 @@ try {
     let tableChanges = core.getInput('tableChanges');
     let dataChanges = core.getInput('dataChanges');
 
-    tableChanges = `Pending migrations SQL:
-ALTER TABLE \`sample\` CHANGE \`created_by_id\` \`created_by\` varchar(255) NULL
-ALTER TABLE \`sample2\` CHANGE \`updated_by_id\` \`updated_by\` varchar(255) NULL
-ALTER TABLE \`sample3\` CHANGE \`created_by_id\` \`created_by\` varchar(255) NULL
-ALTER TABLE \`sample4\` CHANGE \`updated_by_id\` \`updated_by\` varchar(255) NULL
-ALTER TABLE \`sample5\` CHANGE \`created_by_id\` \`created_by\` varchar(255) NULL
-ALTER TABLE \`sample6\` CHANGE \`updated_by_id\` \`updated_by\` varchar(255) NULL
-`
-
+    console.log("table changes")
+    console.log(tableChanges)
+    console.log("data changes")
+    console.log(dataChanges)
+    console.log("Done")
     const token: string = core.getInput('pat-token');
     const orgName: string = core.getInput('org-name');
     const project: string =  core.getInput('project');

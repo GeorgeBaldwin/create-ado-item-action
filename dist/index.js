@@ -71482,14 +71482,10 @@ const github = __nccwpck_require__(9291);
 try {
     let tableChanges = core.getInput('tableChanges');
     let dataChanges = core.getInput('dataChanges');
-    tableChanges = `Pending migrations SQL:
-ALTER TABLE \`sample\` CHANGE \`created_by_id\` \`created_by\` varchar(255) NULL
-ALTER TABLE \`sample2\` CHANGE \`updated_by_id\` \`updated_by\` varchar(255) NULL
-ALTER TABLE \`sample3\` CHANGE \`created_by_id\` \`created_by\` varchar(255) NULL
-ALTER TABLE \`sample4\` CHANGE \`updated_by_id\` \`updated_by\` varchar(255) NULL
-ALTER TABLE \`sample5\` CHANGE \`created_by_id\` \`created_by\` varchar(255) NULL
-ALTER TABLE \`sample6\` CHANGE \`updated_by_id\` \`updated_by\` varchar(255) NULL
-`;
+    console.log("table changes");
+    console.log(tableChanges);
+    console.log("data changes");
+    console.log(dataChanges);
     const token = core.getInput('pat-token');
     const orgName = core.getInput('org-name');
     const project = core.getInput('project');
