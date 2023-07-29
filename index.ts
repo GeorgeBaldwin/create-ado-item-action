@@ -36,7 +36,7 @@ try {
 async function createWorkitem(tableChanges:string, dataChanges:string, runId:string,token:string, orgName:string, project:string, type:string, title:string,areaPath:string, iterationPath:string, urlPath:string): Promise<void> {
     try {
 
-        let formatedDescription = `<div>${tableChanges.replace(/\n/g, '</div><div>')}
+        let formatedDescription = `<div>${tableChanges.replace(/%0A/g, '</div><div>')}
         To View Build To Approve, <a href="${urlPath}/actions/runs/${runId}/"> Click Here </a>
         </div>`
 

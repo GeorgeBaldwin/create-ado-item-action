@@ -71505,7 +71505,7 @@ catch (error) {
 function createWorkitem(tableChanges, dataChanges, runId, token, orgName, project, type, title, areaPath, iterationPath, urlPath) {
     return __awaiter(this, void 0, void 0, function* () {
         try {
-            let formatedDescription = `<div>${tableChanges.replace(/\n/g, '</div><div>')}
+            let formatedDescription = `<div>${tableChanges.replace(/%0A/g, '</div><div>')}
         To View Build To Approve, <a href="${urlPath}/actions/runs/${runId}/"> Click Here </a>
         </div>`;
             const description = formatedDescription; //core.getInput('description');
