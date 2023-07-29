@@ -71480,8 +71480,11 @@ const work_item_functions_1 = __nccwpck_require__(7893);
 const core = __nccwpck_require__(1457);
 const github = __nccwpck_require__(9291);
 try {
+    console.log(`The Current RunID: ${github.context.runId}`);
     let tableChanges = core.getInput('table-changes');
+    tableChanges = tableChanges.substring(tableChanges.indexOf("Pending migrations SQL:"));
     let dataChanges = core.getInput('data-changes');
+    dataChanges = dataChanges.substring(dataChanges.indexOf("Pending migrations SQL"));
     const orgName = core.getInput('org-name');
     const project = core.getInput('project');
     const type = core.getInput('type');
@@ -71490,7 +71493,6 @@ try {
     const areaPath = core.getInput("area-path");
     const iterationPath = core.getInput("iteration-path");
     const urlPath = github.context.payload.repository.html_url;
-    console.log(`The Current RunID: ${github.context.runId}`);
     createWorkitem(tableChanges, dataChanges, github.context.runId.toString(), pat, orgName, project, type, title, areaPath, iterationPath, urlPath);
 }
 catch (error) {
@@ -71499,10 +71501,13 @@ catch (error) {
 function createWorkitem(tableChanges, dataChanges, runId, token, orgName, project, type, title, areaPath, iterationPath, urlPath) {
     return __awaiter(this, void 0, void 0, function* () {
         try {
-            let formatedDescription = `<div>${tableChanges.replace(/%0A/g, '</div><div>')}
-        To View Build To Approve, <a href="${urlPath}/actions/runs/${runId}/"> Click Here </a>
-        </div>`;
-            const description = formatedDescription; //core.getInput('description');
+            let formatedDescription = `<div><b>SQL Schema Changes:</b></div></dib><div>${tableChanges.replace(/%0A/g, '</div><div>')}`;
+            if (dataChanges.length > 0)
+                formatedDescription = formatedDescription + `<b>SQL Data Changes:</b></div><div>${dataChanges.replace(/%0A/g, '</div><div>')}`;
+            formatedDescription = formatedDescription + '<br/>To View Build To Approve, <a href="${urlPath}/actions/runs/${runId}/"> Click Here </a></div>';
+            const description = formatedDescription;
+            console.log("Description to save");
+            console.log(description);
             core.debug(`orgName: ${orgName}`);
             core.debug(`project: ${project}`);
             core.debug(`type: ${type}`);
