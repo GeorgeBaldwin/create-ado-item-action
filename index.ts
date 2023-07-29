@@ -5,11 +5,12 @@ const github = require('@actions/github');
 
 try {
 
-    let tableChanges = core.getInput('tableChanges');
-    let dataChanges = core.getInput('dataChanges');
+    let tableChanges = core.getInput('table-changes');
+    let dataChanges = core.getInput('data-changes');
 
-    console.log("table changes")
+    console.log("updated table changes")
     console.log(tableChanges)
+
     console.log("data changes")
     console.log(dataChanges)
     console.log("Done")

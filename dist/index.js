@@ -71482,7 +71482,7 @@ const github = __nccwpck_require__(9291);
 try {
     let tableChanges = core.getInput('table-changes');
     let dataChanges = core.getInput('data-changes');
-    console.log("table changes");
+    console.log("updated table changes");
     console.log(tableChanges);
     console.log("data changes");
     console.log(dataChanges);
