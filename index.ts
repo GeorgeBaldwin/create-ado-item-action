@@ -23,19 +23,15 @@ try {
     core.setFailed(error.message);
 }
 
-
-
 async function createWorkitem(tableChanges:string, dataChanges:string, runId:string,token:string, orgName:string, project:string, type:string, title:string,areaPath:string, iterationPath:string, urlPath:string): Promise<void> {
     try {
 
         let formatedDescription = `<div><b>SQL Schema Changes:</b></div></dib><div>${tableChanges.replace(/%0A/g, '</div><div>')}`
         if(dataChanges.length > 0)
             formatedDescription= formatedDescription + `<b>SQL Data Changes:</b></div><div>${dataChanges.replace(/%0A/g, '</div><div>')}`
-        formatedDescription = formatedDescription + `<br/>To View Build To Approve, <a href='${urlPath}/actions/runs/${runId}/'> Click Here </a></div>`
+        formatedDescription = formatedDescription + `<br/><br/>To View Build To Approve, <a href='${urlPath}/actions/runs/${runId}/'> Click Here </a></div>`
 
         const description: string = formatedDescription;
-        console.log("Description to save");
-        console.log(description);
         core.debug(`orgName: ${orgName}`);
         core.debug(`project: ${project}`);
         core.debug(`type: ${type}`);
