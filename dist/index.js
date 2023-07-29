@@ -71480,8 +71480,8 @@ const work_item_functions_1 = __nccwpck_require__(7893);
 const core = __nccwpck_require__(1457);
 const github = __nccwpck_require__(9291);
 try {
-    let tableChanges = core.getInput('tableChanges');
-    let dataChanges = core.getInput('dataChanges');
+    let tableChanges = core.getInput('table-changes');
+    let dataChanges = core.getInput('data-changes');
     console.log("table changes");
     console.log(tableChanges);
     console.log("data changes");
