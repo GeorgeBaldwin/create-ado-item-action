@@ -71496,6 +71496,7 @@ try {
     const areaPath = core.getInput("area-path");
     const iterationPath = core.getInput("iteration-path");
     const urlPath = core.getInput("url-path-build");
+    console.log(github.context);
     console.log(`The Current RunID: ${github.context.runId}`);
     createWorkitem(tableChanges, dataChanges, github.context.runId.toString(), pat, orgName, project, type, title, areaPath, iterationPath, urlPath);
 }
