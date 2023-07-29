@@ -71504,7 +71504,7 @@ function createWorkitem(tableChanges, dataChanges, runId, token, orgName, projec
             let formatedDescription = `<div><b>SQL Schema Changes:</b></div></dib><div>${tableChanges.replace(/%0A/g, '</div><div>')}`;
             if (dataChanges.length > 0)
                 formatedDescription = formatedDescription + `<b>SQL Data Changes:</b></div><div>${dataChanges.replace(/%0A/g, '</div><div>')}`;
-            formatedDescription = formatedDescription + `<br/>To View Build To Approve, <a href="${urlPath}/actions/runs/${runId}/"> Click Here </a></div>`;
+            formatedDescription = formatedDescription + `<br/>To View Build To Approve, <a href='${urlPath}/actions/runs/${runId}/'> Click Here </a></div>`;
             const description = formatedDescription;
             console.log("Description to save");
             console.log(description);
