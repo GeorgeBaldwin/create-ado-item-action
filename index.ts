@@ -7,14 +7,6 @@ try {
 
     let tableChanges = core.getInput('table-changes');
     let dataChanges = core.getInput('data-changes');
-
-    console.log("updated table changes")
-    console.log(tableChanges)
-
-    console.log("data changes")
-    console.log(dataChanges)
-    console.log("Done")
-    const token: string = core.getInput('pat-token');
     const orgName: string = core.getInput('org-name');
     const project: string =  core.getInput('project');
     const type: string = core.getInput('type');
@@ -22,8 +14,7 @@ try {
     const pat: string = core.getInput("pat");
     const areaPath: string = core.getInput("area-path");
     const iterationPath: string = core.getInput("iteration-path");
-    const urlPath: string = core.getInput("url-path-build");
-    console.log(github.context)
+    const urlPath: string = github.context.payload.repository.html_url;
     console.log(`The Current RunID: ${github.context.runId}`)
     createWorkitem(tableChanges,dataChanges,github.context.runId.toString(),pat,orgName,project,type,title,areaPath,iterationPath,urlPath)
 

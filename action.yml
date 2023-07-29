@@ -22,9 +22,6 @@ inputs:
   iteration-path:
     description: 'Iteration to assocaite workitem'
     required: true
-  url-path-build:
-    description: 'URL link to build'
-    required: true
   project:
     description: 'Project name within org'
     required: true

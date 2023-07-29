@@ -71482,12 +71482,6 @@ const github = __nccwpck_require__(9291);
 try {
     let tableChanges = core.getInput('table-changes');
     let dataChanges = core.getInput('data-changes');
-    console.log("updated table changes");
-    console.log(tableChanges);
-    console.log("data changes");
-    console.log(dataChanges);
-    console.log("Done");
-    const token = core.getInput('pat-token');
     const orgName = core.getInput('org-name');
     const project = core.getInput('project');
     const type = core.getInput('type');
@@ -71495,8 +71489,7 @@ try {
     const pat = core.getInput("pat");
     const areaPath = core.getInput("area-path");
     const iterationPath = core.getInput("iteration-path");
-    const urlPath = core.getInput("url-path-build");
-    console.log(github.context);
+    const urlPath = github.context.payload.repository.html_url;
     console.log(`The Current RunID: ${github.context.runId}`);
     createWorkitem(tableChanges, dataChanges, github.context.runId.toString(), pat, orgName, project, type, title, areaPath, iterationPath, urlPath);
 }
